@@ -16,7 +16,7 @@ export class FormComponent implements OnInit {
   @Output()
   public commit = new EventEmitter();
 
-  constructor(private readonly ctrlContainer: FormGroupDirective) { }
+  constructor(private ctrlContainer: FormGroupDirective) { }
 
   public ngOnInit(): void {
     this.form = this.ctrlContainer.form;
