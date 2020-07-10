@@ -10,14 +10,14 @@ export class AppComponent {
 
   public data = {
     group: {
-      field1: 0,
-      field2: 0,
+      field1: '',
+      field2: '',
     },
-    field3: 0,
-    field4: 0
+    field3: '',
+    field4: ''
   };
 
-  public noFormValue = 0;
+  public noFormValue = '';
   public form = new FormGroup({});
 
   public commitValue(value: any): void {
