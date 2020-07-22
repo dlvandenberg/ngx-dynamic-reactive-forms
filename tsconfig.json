@@ -15,6 +15,12 @@
     },
     {
       "path": "./e2e/tsconfig.json"
+    },
+    {
+      "path": "./projects/ngx-dynamic-forms/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/ngx-dynamic-forms/tsconfig.spec.json"
     }
 ]
 }

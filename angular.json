@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "ngx-dynamic-forms": {
+      "projectType": "library",
+      "root": "projects/ngx-dynamic-forms",
+      "sourceRoot": "projects/ngx-dynamic-forms/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-dynamic-forms/tsconfig.lib.json",
+            "project": "projects/ngx-dynamic-forms/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-dynamic-forms/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-dynamic-forms/src/test.ts",
+            "tsConfig": "projects/ngx-dynamic-forms/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-dynamic-forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-dynamic-forms/tsconfig.lib.json",
+              "projects/ngx-dynamic-forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "ng-dynamic-reactive-form"
 }

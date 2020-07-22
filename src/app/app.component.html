@@ -1,37 +1,39 @@
-<app-form [formGroup]="form" (commit)="commitValue($event)">
-    <app-form-group #group name="group">
-        <app-form-field>
-            <app-label>Field 1</app-label>
-            <app-textfield name="field1" [value]="data.group.field1" [group]="group"></app-textfield>
-            <app-suffix>deg</app-suffix>
-        </app-form-field>
-        <app-form-field>
-            <app-label>Field 2</app-label>
-            <app-textfield name="field2" [value]="data.group.field2" [group]="group"></app-textfield>
-            <app-suffix>decg</app-suffix>
-        </app-form-field>
-    </app-form-group>
-    <app-form-field>
-        <app-label>Field 3</app-label>
-        <app-textfield name="field3" [value]="data.field3"></app-textfield>
-    </app-form-field>
-    <app-form-field>
-        <app-label>Field 4</app-label>
-        <app-textfield name="field4" [value]="data.field4"></app-textfield>
-    </app-form-field>
-</app-form>
+<ngx-form (commit)="commitValue($event)" #formWrapper>
+    <ngx-form-group name="group">
+        <ngx-form-field>
+            <ngx-label>Field 1</ngx-label>
+            <ngx-textfield controlName="field1" [value]="data.group.field1"></ngx-textfield>
+            <ngx-suffix>deg</ngx-suffix>
+        </ngx-form-field>
+        <ngx-form-field>
+            <ngx-label>Field 2</ngx-label>
+            <ngx-textfield controlName="field2" [value]="data.group.field2"></ngx-textfield>
+            <ngx-suffix>deg</ngx-suffix>
+        </ngx-form-field>
+    </ngx-form-group>
+    <ngx-form-field>
+        <ngx-label>Field 3</ngx-label>
+        <ngx-textfield controlName="field3" [value]="data.field3"></ngx-textfield>
+    </ngx-form-field>
+    <ngx-form-field>
+        <ngx-label>Field 4</ngx-label>
+        <ngx-textfield controlName="field4" [value]="data.field4"></ngx-textfield>
+    </ngx-form-field>
 
-<app-form-field>
-    <app-label>No form</app-label>
-    <app-textfield name="noForm" [value]="noFormValue"></app-textfield>
-</app-form-field>
+    <button type="submit" [disabled]="!formWrapper.form.valid">Submit</button>
+</ngx-form>
+
+<ngx-form-field>
+    <ngx-label>No form</ngx-label>
+    <ngx-textfield controlName="noForm" [value]="noFormValue"></ngx-textfield>
+</ngx-form-field>
 
 <br/>
 <hr>
 <br/>
 <h1>Form values</h1>
 <pre>
-{{ form.value | json }}
+{{ formWrapper.form.value | json }}
 </pre>
 <h1>No form value</h1>
 <pre>

@@ -1,0 +1,18 @@
+<div class="ngx-textfield-container"
+    [formGroup]="form"
+    [ngClass]="{ 
+        'locked': controlLocked,
+        'disabled': disabled,
+        'valid': formControlValid,
+        'invalid': formControlInvalid
+    }"
+>
+    <input type="text"
+        [formControlName]="controlName"
+        (focus)="onControlGainedFocus()"
+        (blur)="onControlLostFocus()"
+        (keydown.esc)="formService.triggerReset()"
+        (click)="onControlGainedFocus()"
+        (keydown.enter)="submitFormControl()"
+    />
+</div>
